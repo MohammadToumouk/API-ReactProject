@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap');
 
 #root {
   width: 100%;
@@ -54,9 +55,9 @@
 .postFeld{
   
   background-color: whitesmoke;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 5px 10px;
-  height: 28vh;
+  height: 33vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,7 +75,7 @@ button{
 }
 .imgBtn{
   position: relative;
-  top: 22px;
+  top: 10px;
 }
 .imgBtn1:hover{
   transform: scale(1.2);
@@ -88,8 +89,8 @@ button{
   width: 100%;
   display: flex;
   flex-direction: row;
-  
-  
+  gap: 10px;
+  /* justify-content: space-between;   */
 }
 .titlenBody{
   position: relative;
@@ -104,21 +105,21 @@ button{
   justify-content: space-between;
 }
 .userPic{
-  border-radius: 10px;
-  transition: border-radius 0.3s ease;
-  margin-left: 10px;
-  
+  border-radius: 7px;
+  transition: border-radius 0.3s ease;  
 }
+
 .userPic:hover{
  border-radius: 15px;
 }
 .title{
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Lobster', serif;
   font-size: 22px;
   color: rgb(0, 0, 0);
   
 }
 .body{
+  font-family: 'Libre Baskerville', serif;
   font-size: 16px;
   display: flex;
   justify-content: flex-start;
@@ -165,7 +166,7 @@ li{
   padding-left: 15px;
   width: 400px;
   height: 3vh;
-  border-radius: 10px;
+  border-radius: 3px;
   border: none;
   background-color: whitesmoke;
   color: rgb(0, 0, 0);
@@ -173,7 +174,7 @@ li{
   margin: 0 20px;
 }
 
-body{
+.body{
   font-family: 'Source Sans Pro', sans-serif;
   background-color: whitesmoke;
   width: 100%;
@@ -192,6 +193,7 @@ body{
   align-self: auto;
   margin-bottom: 0;
   margin-left: 5px;
+  border-radius: 3px;
   
 
 }
@@ -224,15 +226,18 @@ body{
   height: 500px;
   border: solid 1px rgba(138, 138, 138, 0.26);
   top: 167px;
-  border-radius: 25px;
+  border-radius: 10px;
   left: 10px;
   padding: 10px 10px;
 }
 
 .header-sidebar {
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Lobster', sans-serif;
+  font-size: 18px;
   display: flex;
   justify-content: flex-start;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .post-preview {
@@ -272,13 +277,26 @@ body{
 }
 
 .button-one {
-  background-color: #5C8984;
   border-radius: 2px;
+  background-color: #5c7e89;
+  color: rgb(255, 255, 255);
+  width: 150px;
+  font-size: 14px;
+}
+
+.button-one:hover {
+background-color: #fff;
+border-color: transparent;
+color: #444;
 }
 
 .button-2-3 {
   background-color: #1c2928;
   border-radius: 2px;
+  color: rgb(255, 255, 255);
+  width: 150px;
+  font-size: 14px;
+  
 }
 .navbar {
   display: flex;
@@ -296,7 +314,7 @@ body{
 
 .icon-btn {
   background-color: #5c8984;
-  border-radius: 0;
+  border-radius: 3px;
   padding: 9px 15px 12px 15px;
   border: none;
 }
@@ -306,8 +324,8 @@ body{
 }
 
 .nav-input {
-  height: 39px;
-  border-radius: 0;
+  height: 45px;
+  border-radius: 3px;
   background-color: white;
   border: 0.5px solid grey;
   padding: 0;
@@ -336,7 +354,7 @@ body{
   justify-content: center;
   align-items: center;
   border: solid 1px rgba(0, 0, 0, 0.144);
-  border-radius: 25px;
+  border-radius: 10px;
 }
 .SecondNav{
   padding-bottom: 10px; 
