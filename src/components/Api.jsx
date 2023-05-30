@@ -167,19 +167,7 @@ const ApiServer = () => {
     <div className='MainAndSideBar'>
     
     <div>
-      <form>
-      
-        <div className='postingContainer' style={{display:"flex", flexDirection:"row"}}>
-          
-        <input className='inputfeld' ref={createTitle} placeholder="Title" />
-        <input className='inputfeld' ref={createBody} placeholder="Body" />
-        <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3254663/component-add-icon-md.png" className='imgBtn1'  width={"50px"} onClick={handleAdd}>
-         
-        </img>
-        </div>
-        
-        
-      </form>
+     
       
       
       <ul className='postContainer'>
@@ -199,6 +187,7 @@ const ApiServer = () => {
 
                      <button onClick={() => handleSaveButtonClick(post.id)}>
                   Save
+
                 </button>
                 </>
                 ) : (
@@ -206,9 +195,17 @@ const ApiServer = () => {
                     <Unsplash width={"400px"} height={"250px"} className='userPic' postId={post.id} />
                     <img key={post.id} src='https://cdn.wallpapersafari.com/2/96/Cx7BJP.jpg' width={"400px"} height={"250px"} className='userPic'></img>
                     <div className='titlenBody'>
-                    <li className='title' key={post.id}>{"Title: " + post.title}
+                    <li className='title' key={post.id}>{post.title}
+                    
                     <div className='body' key={post.id}>{post.body}</div></li>
+                    {selectedUserId === post.id && 
+            
+            <p className='UserFeld' key={post.id}> {<ApiUsers postId={post.id}/>}
+            </p> 
+            
+           }
                     <div style={{display:"flex", flexDirection:"row"}}>
+
                     <button className='showBtn' onClick={() => handleToggleComments(post.id)}>{buttonName}</button>
                     <button className='showBtn' onClick={() => handleToggleUsers(post.id)}>Show Author</button>
                     </div>
@@ -235,32 +232,46 @@ const ApiServer = () => {
              </li> 
              </ul>
             }
-            {selectedUserId === post.id && 
             
-             <p className='UserFeld' key={post.id}> {<ApiUsers postId={post.id}/>}
-             </p> 
-             
-            }
             
             
             </div>
           </li> 
         ))}
-        {newPost && (
+       {newPost && (
           <li key={newPost.id}>
             <div className="postFeld">
-              <li key={newPost.id}>{"Title: "+ newPost.title}</li>
+            <img width={"400px"} height={"250px"} className='userPic' src='https://cdn.wallpapersafari.com/2/96/Cx7BJP.jpg' />
+              <li className='title' key={newPost.id}>{newPost.title}</li>
+              <button>{buttonName}</button>
+
               <div>
-                <button onClick={() => handleEdit(newPost.id, 'Updated Title')}>Edit</button>
-                <button onClick={() => handleDelete(newPost.id)}>Delete</button>
+              <img className='imgBtn' onClick={() => handleEditButtonClick(post.id)} src= "https://static.thenounproject.com/png/2473159-200.png" width={"50px"} height={"50px"}></img>
+
+
+                  <img className='imgBtn' onClick={() => handleDelete(post.id)} src='https://cdn.onlinewebfonts.com/svg/img_117750.png' width={"50px"} height={"50px"}></img>
               </div>
+              
             </div>
-            <button>{buttonName}</button>
+            
           </li>
         )}
       </ul>
       </div>
-      <Sidebar />
+      <form className='form'>
+      
+      <div className='postingContainer' style={{display:"flex", /*flexDirection:"row"*/}}>
+        <div className='container-title-post'>
+          <input className='inputfeld' ref={createTitle} placeholder="Title..." />
+          <input className='inputfeld' ref={createBody} placeholder="Your Post..." />
+        </div>
+        <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3254663/component-add-icon-md.png" className='imgBtn1'  width={"50px"} onClick={handleAdd}>
+       </img>
+      </div>
+      
+      
+    </form>
+    <Sidebar />
       </div>
     </div>
   );

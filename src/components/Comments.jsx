@@ -34,9 +34,9 @@ const ApiComments = ({postId}) => {
     return (
         <div>
         
-            <ul>
+            <ul className="ul">
             {comments.map((comment) => (
-                <li key={comment.id}> {comment.body} </li>
+                <li key={comment.id}> "{comment.body}" </li>
             ))}
             </ul>
         </div>
